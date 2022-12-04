@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -97,6 +98,7 @@ public class Main {
                         //search();
                         break;
                     case 3:
+
                         System.out.println("Goodbye");
                         System.exit(0);
                     default:
@@ -138,11 +140,9 @@ public class Main {
         System.out.println("Enter Description :");
         String desc = myObj.nextLine();
         c1.setDesc(desc);
-        System.out.println("Enter TicketID :");
-        int TicketID = myObj.nextInt();
-        c1.setTicketID(String.valueOf(TicketID));
+        String TicketID=RandomString();
+        c1.setTicketID(TicketID);
         System.out.println("Enter Username :");
-        String username1 = myObj.nextLine();
         String username = myObj.nextLine();
         c1.setUser(username);
         try
@@ -151,11 +151,27 @@ public class Main {
             FileWriter fw = new FileWriter(filename,true); //the true will append the new data
             fw.write(c1+ "\n");//appends the string to the file
             fw.close();
+            System.out.println("Your TickedID is: " + TicketID);
+            System.exit(0);
         }
         catch(IOException ioe)
         {
             System.err.println("IOException: " + ioe.getMessage());
         }
+    }
+    public static String RandomString() {
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 10;
+        Random random = new Random();
+
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+
+        return generatedString;
     }
     public static void main(String[] args) throws IOException {
             showMenu();
