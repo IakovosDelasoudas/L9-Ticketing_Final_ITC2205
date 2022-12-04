@@ -1,20 +1,30 @@
 public class Ticket {
-    private String number;
+    private static int count = 0;
+    private String TicketID;
     private String user;
     private String desc;
 
-    public Ticket(String number, String user, String desc) {
-        this.number = number;
+    private boolean isFilled;
+
+    public Ticket(String TicketID, String user, String desc) {
+        this.TicketID = TicketID;
         this.user = user;
         this.desc = desc;
     }
 
-    public String getNumber() {
-        return number;
+    public Ticket(String title) {
+        user = title;
+
+        isFilled = false;
+        setTicketID(++count);
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public String getTicketID() {
+        return TicketID;
+    }
+
+    public void setTicketID(String TicketID) {
+        this.TicketID = TicketID;
     }
 
     public String getUser() {
