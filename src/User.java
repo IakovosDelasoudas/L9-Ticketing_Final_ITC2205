@@ -6,6 +6,7 @@ public class User {
     }
     private Type type;
 
+    // CONSTRUCTOR
     public User(String username, String password, Type type) {
         if (username!=null && username.length()>=2)
         {
@@ -17,6 +18,8 @@ public class User {
         }
         this.type = type;
     }
+
+    // GETTERS
     public String getUsername()
     {
         return username;

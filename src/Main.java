@@ -10,7 +10,8 @@ public class Main {
         System.out.flush();
         // CLEARING SCREEN COMMAND (END)
     }
-    public void login() {
+    public static void login() throws IOException {
+        Store store = new Store();
         Scanner input = new Scanner(System.in);
         System.out.println("Username: ");
         String username = input.next();
@@ -23,18 +24,26 @@ public class Main {
             {   // found the user that matches the username
                 foundIt = true;
                 if (u.authenticate(password)) {
-                    System.out.println("Username: "+username+" login successful");
-//                    Store.setCurrentUser(u);
+                    System.out.println("Username: '"+username+"' logged in successfully");
+//                  Store.setCurrentUser(u);
+                    if (username.equals("User")){
+                        showusermenu();
+                    }
+                    else if (username.equals("Staff1") || username.equals("Staff2")) {
+                        showstaffmenu();
+                    }
                 }
                 else
                 {
-                    System.out.println("password does not match");
+                    System.err.println("Password does not match");
+                    System.exit(-1);
                 }
             }
         }
         if (!foundIt)
         {
-            System.out.println("Username not found");
+            System.err.println("Username not found");
+            System.exit(-1);
         }
     }
     public static int readInteger()throws IOException  { // input validation
@@ -67,8 +76,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
-                        addticket();
-                        //login();
+                        login();
                         break;
                     case 2:
                         System.out.println("Goodbye");
@@ -137,21 +145,48 @@ public class Main {
     public static void addticket()throws IOException { // add the book to file and prints the things that the user types
         Ticket c1 = new Ticket();
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter Description :");
-        String desc = myObj.nextLine();
-        c1.setDesc(desc);
-        String TicketID=RandomString();
-        c1.setTicketID(TicketID);
-        System.out.println("Enter Username :");
-        String username = myObj.nextLine();
-        c1.setUser(username);
+        while (true) {
+            System.out.println("---- TICKET CATEGORY -----");
+            System.out.println("1. Question about product delivery...");
+            System.out.println("2. Issue with delivered product...");
+            int option = 0;
+            do {
+                option = readInteger();
+                switch (option) {
+                    case 1 -> {
+                        System.out.println("Enter Description :");
+                        String desc = myObj.nextLine();
+                        c1.setDesc(desc);
+                        String TicketID = RandomString();
+                        c1.setTicketID(TicketID);
+                        c1.setUser("User");
+                        c1.setType(Ticket.Type.Type1);
+                        AppendToFile(c1, TicketID);
+                    }
+                    case 2 -> {
+                        System.out.println("Enter Description :");
+                        String desc = myObj.nextLine();
+                        c1.setDesc(desc);
+                        String TicketID = RandomString();
+                        c1.setTicketID(TicketID);
+                        c1.setUser("User");
+                        c1.setType(Ticket.Type.Type2);
+                        AppendToFile(c1, TicketID);
+                    }
+                    default -> System.out.println("Please type 1 - 2");
+                }
+            } while (option < 1 || option > 2);
+        }
+    }
+
+    private static void AppendToFile(Ticket c1, String ticketID) {
         try
         {
             String filename= "Tickets.txt";
             FileWriter fw = new FileWriter(filename,true); //the true will append the new data
             fw.write(c1+ "\n");//appends the string to the file
             fw.close();
-            System.out.println("Your TickedID is: " + TicketID);
+            System.out.println("Your TickedID is: " + ticketID);
             System.exit(0);
         }
         catch(IOException ioe)
@@ -159,6 +194,7 @@ public class Main {
             System.err.println("IOException: " + ioe.getMessage());
         }
     }
+
     public static String RandomString() {
         int leftLimit = 48; // numeral '0'
         int rightLimit = 122; // letter 'z'

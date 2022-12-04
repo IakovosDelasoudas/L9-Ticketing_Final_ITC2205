@@ -1,0 +1,179 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.FileWriter;\r\nimport java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void CLS() {\r\n        // CLEARING SCREEN COMMAND (START)\r\n        System.out.println(\"\\033[H\\033[2J\");\r\n        System.out.flush();\r\n        // CLEARING SCREEN COMMAND (END)\r\n    }\r\n    public void login() {\r\n        Scanner input = new Scanner(System.in);\r\n        System.out.println(\"Username: \");\r\n        String username = input.next();\r\n        System.out.println(\"Password: \");\r\n        String password = input.next();\r\n        boolean foundIt = false;\r\n        for (User u:Store.getUserList())\r\n        {\r\n            if (u.getUsername().equals(username))\r\n            {   // found the user that matches the username\r\n                foundIt = true;\r\n                if (u.authenticate(password)) {\r\n                    System.out.println(\"Username: \"+username+\" login successful\");\r\n//                    Store.setCurrentUser(u);\r\n                }\r\n                else\r\n                {\r\n                    System.out.println(\"password does not match\");\r\n                }\r\n            }\r\n        }\r\n        if (!foundIt)\r\n        {\r\n            System.out.println(\"Username not found\");\r\n        }\r\n    }\r\n    public static int readInteger()throws IOException  { // input validation\r\n        System.out.println(\"Choose your option\");\r\n        int option = 0;\r\n        Scanner input = new Scanner(System.in);\r\n        boolean error;\r\n        do {\r\n            try {\r\n                option = input.nextInt();\r\n                error = false;\r\n            } catch (Exception e) {\r\n                System.out.println(\"That was not an integer\");\r\n                input.next(); //Throw away the wrong input\r\n                error = true;\r\n            }\r\n        }\r\n        while (error);\r\n        return option;\r\n    }\r\n    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion\r\n        String nameToSearch;\r\n        while (true) {\r\n            System.out.println(\"---- What do you want to so today? -----\");\r\n            System.out.println(\"1. Login\");\r\n            System.out.println(\"2. Exit\");\r\n            int option = 0;\r\n            do {\r\n                option = readInteger();\r\n                switch (option) {\r\n                    case 1:\r\n                        CLS();\r\n                        System.out.println(\"1. Login\");\r\n                        //login();\r\n                        break;\r\n                    case 2:\r\n                        System.out.println(\"Goodbye\");\r\n                        System.exit(0);\r\n                    default:\r\n                        System.out.println(\"Please type 1 - 2\");\r\n                }\r\n            } while (option < 1 || option > 2);\r\n        }\r\n    }\r\n    public static void showusermenu()throws IOException {\r\n        while (true) {\r\n            System.out.println(\"---- What do you want to so today? -----\");\r\n            System.out.println(\"1. Submit ticket\");\r\n            System.out.println(\"2. Search ticket\");\r\n            System.out.println(\"3. Exit\");\r\n            int option = 0;\r\n            do {\r\n                option = readInteger();\r\n                switch (option) {\r\n                    case 1:\r\n                        CLS();\r\n                        //Submitticket();\r\n                        break;\r\n                    case 2:\r\n                        CLS();\r\n                        //search();\r\n                        break;\r\n                    case 3:\r\n                        System.out.println(\"Goodbye\");\r\n                        System.exit(0);\r\n                    default:\r\n                        System.out.println(\"Please type 1 - 3\");\r\n                }\r\n            } while (option < 1 || option > 3);\r\n        }\r\n    }\r\n    public static void showstaffmenu()throws IOException {\r\n        while (true) {\r\n            System.out.println(\"---- What do you want to so today? -----\");\r\n            System.out.println(\"1. View submitted tickets\");\r\n            System.out.println(\"2. Search tickets either by submitted by specific user or by ticket number\");\r\n            System.out.println(\"3. Exit\");\r\n            int option = 0;\r\n            do {\r\n                option = readInteger();\r\n                switch (option) {\r\n                    case 1:\r\n                        CLS();\r\n                        //Viewtickets();\r\n                        break;\r\n                    case 2:\r\n                        CLS();\r\n                        //search();\r\n                        break;\r\n                    case 3:\r\n                        System.out.println(\"Goodbye\");\r\n                        System.exit(0);\r\n                    default:\r\n                        System.out.println(\"Please type 1 - 3\");\r\n                }\r\n            } while (option < 1 || option > 3);\r\n        }\r\n    }\r\n    public static void addticket()throws IOException { // add the book to file and prints the things that the user types\r\n        Ticket c1 = new Ticket();\r\n        try\r\n        {\r\n            String filename= \"Books.txt\";\r\n            FileWriter fw = new FileWriter(filename,true); //the true will append the new data\r\n            fw.write(c1+ \"\\n\");//appends the string to the file\r\n            fw.close();\r\n        }\r\n        catch(IOException ioe)\r\n        {\r\n            System.err.println(\"IOException: \" + ioe.getMessage());\r\n        }\r\n\r\n    }\r\n    public static void main(String[] args) throws IOException {\r\n            showMenu();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision e989d42da028dcf75f362bb20399b618d73e2882)
++++ b/src/Main.java	(date 1670172833967)
+@@ -1,4 +1,3 @@
+-import java.io.FileWriter;
+ import java.io.IOException;
+ import java.util.Scanner;
+ 
+@@ -9,7 +8,7 @@
+         System.out.flush();
+         // CLEARING SCREEN COMMAND (END)
+     }
+-    public void login() {
++    public static void login() {
+         Scanner input = new Scanner(System.in);
+         System.out.println("Username: ");
+         String username = input.next();
+@@ -64,88 +63,19 @@
+             do {
+                 option = readInteger();
+                 switch (option) {
+-                    case 1:
++                    case 1 -> {
+                         CLS();
+                         System.out.println("1. Login");
+-                        //login();
+-                        break;
+-                    case 2:
++                        login();
++                    }
++                    case 2 -> {
+                         System.out.println("Goodbye");
+                         System.exit(0);
+-                    default:
+-                        System.out.println("Please type 1 - 2");
++                    }
++                    default -> System.out.println("Please type 1 - 2");
+                 }
+             } while (option < 1 || option > 2);
+         }
+-    }
+-    public static void showusermenu()throws IOException {
+-        while (true) {
+-            System.out.println("---- What do you want to so today? -----");
+-            System.out.println("1. Submit ticket");
+-            System.out.println("2. Search ticket");
+-            System.out.println("3. Exit");
+-            int option = 0;
+-            do {
+-                option = readInteger();
+-                switch (option) {
+-                    case 1:
+-                        CLS();
+-                        //Submitticket();
+-                        break;
+-                    case 2:
+-                        CLS();
+-                        //search();
+-                        break;
+-                    case 3:
+-                        System.out.println("Goodbye");
+-                        System.exit(0);
+-                    default:
+-                        System.out.println("Please type 1 - 3");
+-                }
+-            } while (option < 1 || option > 3);
+-        }
+-    }
+-    public static void showstaffmenu()throws IOException {
+-        while (true) {
+-            System.out.println("---- What do you want to so today? -----");
+-            System.out.println("1. View submitted tickets");
+-            System.out.println("2. Search tickets either by submitted by specific user or by ticket number");
+-            System.out.println("3. Exit");
+-            int option = 0;
+-            do {
+-                option = readInteger();
+-                switch (option) {
+-                    case 1:
+-                        CLS();
+-                        //Viewtickets();
+-                        break;
+-                    case 2:
+-                        CLS();
+-                        //search();
+-                        break;
+-                    case 3:
+-                        System.out.println("Goodbye");
+-                        System.exit(0);
+-                    default:
+-                        System.out.println("Please type 1 - 3");
+-                }
+-            } while (option < 1 || option > 3);
+-        }
+-    }
+-    public static void addticket()throws IOException { // add the book to file and prints the things that the user types
+-        Ticket c1 = new Ticket();
+-        try
+-        {
+-            String filename= "Books.txt";
+-            FileWriter fw = new FileWriter(filename,true); //the true will append the new data
+-            fw.write(c1+ "\n");//appends the string to the file
+-            fw.close();
+-        }
+-        catch(IOException ioe)
+-        {
+-            System.err.println("IOException: " + ioe.getMessage());
+-        }
+-
+     }
+     public static void main(String[] args) throws IOException {
+             showMenu();
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ISBhyfxnVaIs3PPSuzn0pmiNtu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"\" />\r\n      <created>1670165227642</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670165227642</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e989d42da028dcf75f362bb20399b618d73e2882)
++++ b/.idea/workspace.xml	(date 1670172786011)
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="4d00eeb6-c038-4e56-8eeb-afd45776f328" name="Changes" comment="update">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    <list default="true" id="4d00eeb6-c038-4e56-8eeb-afd45776f328" name="Changes" comment="login function">
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -34,6 +33,28 @@
+       <option name="presentableId" value="Default" />
+       <updated>1670165227642</updated>
+     </task>
++    <task id="LOCAL-00001" summary="login">
++      <created>1670171351123</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1670171351123</updated>
++    </task>
++    <task id="LOCAL-00002" summary="login">
++      <created>1670171401062</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1670171401062</updated>
++    </task>
++    <task id="LOCAL-00003" summary="login function">
++      <created>1670171454230</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1670171454230</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -47,4 +68,9 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="login" />
++    <MESSAGE value="login function" />
++    <option name="LAST_COMMIT_MESSAGE" value="login function" />
++  </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,64 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void CLS() {\r\n        // CLEARING SCREEN COMMAND (START)\r\n        System.out.println(\"\\033[H\\033[2J\");\r\n        System.out.flush();\r\n        // CLEARING SCREEN COMMAND (END)\r\n    }\r\n    public static void login() {\r\n        Scanner input = new Scanner(System.in);\r\n        System.out.println(\"Username: \");\r\n        String username = input.next();\r\n        System.out.println(\"Password: \");\r\n        String password = input.next();\r\n        boolean foundIt = false;\r\n        for (User u:Store.getUserList())\r\n        {\r\n            if (u.getUsername().equals(username))\r\n            {   // found the user that matches the username\r\n                foundIt = true;\r\n                if (u.authenticate(password)) {\r\n                    System.out.println(\"Username: \"+username+\" login successful\");\r\n//                    Store.setCurrentUser(u);\r\n                }\r\n                else\r\n                {\r\n                    System.out.println(\"password does not match\");\r\n                }\r\n            }\r\n        }\r\n        if (!foundIt)\r\n        {\r\n            System.out.println(\"Username not found\");\r\n        }\r\n    }\r\n    public static int readInteger()throws IOException  { // input validation\r\n        System.out.println(\"Choose your option\");\r\n        int option = 0;\r\n        Scanner input = new Scanner(System.in);\r\n        boolean error;\r\n        do {\r\n            try {\r\n                option = input.nextInt();\r\n                error = false;\r\n            } catch (Exception e) {\r\n                System.out.println(\"That was not an integer\");\r\n                input.next(); //Throw away the wrong input\r\n                error = true;\r\n            }\r\n        }\r\n        while (error);\r\n        return option;\r\n    }\r\n    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion\r\n        String nameToSearch;\r\n        while (true) {\r\n            System.out.println(\"---- What do you want to so today? -----\");\r\n            System.out.println(\"1. Login\");\r\n            System.out.println(\"2. Exit\");\r\n            int option = 0;\r\n            do {\r\n                option = readInteger();\r\n                switch (option) {\r\n                    case 1 -> {\r\n                        CLS();\r\n                        System.out.println(\"1. Login\");\r\n                        login();\r\n                    }\r\n                    case 2 -> {\r\n                        System.out.println(\"Goodbye\");\r\n                        System.exit(0);\r\n                    }\r\n                    default -> System.out.println(\"Please type 1 - 2\");\r\n                }\r\n            } while (option < 1 || option > 2);\r\n        }\r\n    }\r\n    public static void main(String[] args) throws IOException {\r\n            showMenu();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 77789f4b883f9869b3ac752aefbde04651aafa5d)
++++ b/src/Main.java	(date 1670171875710)
+@@ -65,7 +65,6 @@
+                 switch (option) {
+                     case 1 -> {
+                         CLS();
+-                        System.out.println("1. Login");
+                         login();
+                     }
+                     case 2 -> {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"login function\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ISBhyfxnVaIs3PPSuzn0pmiNtu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"\" />\r\n      <created>1670165227642</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670165227642</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"login\">\r\n      <created>1670171351123</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670171351123</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"login\">\r\n      <created>1670171401062</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670171401062</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"login function\">\r\n      <created>1670171454230</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670171454230</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"login\" />\r\n    <MESSAGE value=\"login function\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"login function\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 77789f4b883f9869b3ac752aefbde04651aafa5d)
++++ b/.idea/workspace.xml	(date 1670172639801)
+@@ -1,7 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="4d00eeb6-c038-4e56-8eeb-afd45776f328" name="Changes" comment="login function">
++    <list default="true" id="4d00eeb6-c038-4e56-8eeb-afd45776f328" name="Changes" comment="enhanced switch">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -54,7 +55,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1670171454230</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="enhanced switch">
++      <created>1670171628005</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1670171628005</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -71,6 +79,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="login" />
+     <MESSAGE value="login function" />
+-    <option name="LAST_COMMIT_MESSAGE" value="login function" />
++    <MESSAGE value="enhanced switch" />
++    <option name="LAST_COMMIT_MESSAGE" value="enhanced switch" />
+   </component>
+ </project>
+\ No newline at end of file
