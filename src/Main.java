@@ -8,7 +8,7 @@ public class Main {
         System.out.flush();
         // CLEARING SCREEN COMMAND (END)
     }
-    public void login() {
+    public static void login() {
         Scanner input = new Scanner(System.in);
         System.out.println("Username: ");
         String username = input.next();
@@ -63,16 +63,16 @@ public class Main {
             do {
                 option = readInteger();
                 switch (option) {
-                    case 1:
+                    case 1 -> {
                         CLS();
                         System.out.println("1. Login");
-                        //login();
-                        break;
-                    case 2:
+                        login();
+                    }
+                    case 2 -> {
                         System.out.println("Goodbye");
                         System.exit(0);
-                    default:
-                        System.out.println("Please type 1 - 2");
+                    }
+                    default -> System.out.println("Please type 1 - 2");
                 }
             } while (option < 1 || option > 2);
         }
