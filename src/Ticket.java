@@ -51,10 +51,6 @@ public class Ticket {
     // TO-STRING METHOD
     @Override
     public String toString() {
-        return "Ticket{" +
-                "TicketID='" + TicketID + '\'' +
-                ", user='" + user + '\'' +
-                ", desc='" + desc + '\'' +
-                '}';
+        return TicketID + "*" + user + "*" + desc + "*" + type;
     }
 }
