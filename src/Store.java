@@ -8,8 +8,10 @@ public class Store {
     public Store()
     {
         userList = new ArrayList<>();
-        userList.add(new User("Player", "Player123", User.Type.Player));
-        userList.add(new User("Coach", "Coach123", User.Type.Coach));
+        userList.add(new User("User", "User123", User.Type.User));
+        userList.add(new User("Staff1", "Staff123", User.Type.Staff1));
+        userList.add(new User("Staff2", "Staff321", User.Type.Staff2));
+        userList.add(new User("Owner", "Owner123", User.Type.Owner));
     }
 
     public ArrayList<User> getUserList() {

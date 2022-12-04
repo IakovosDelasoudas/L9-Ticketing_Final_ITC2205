@@ -2,7 +2,7 @@ public class User {
     private String username;
     private String password;
     public enum Type {
-        Player, Coach
+        User, Staff1, Staff2, Owner
     }
     private Type type;
 
