@@ -22,7 +22,7 @@ public class Main {
                 foundIt = true;
                 if (u.authenticate(password)) {
                     System.out.println("Username: "+username+" login successful");
-                    Store.setCurrentUser(u);
+//                    Store.setCurrentUser(u);
                 }
                 else
                 {
