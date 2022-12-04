@@ -1,0 +1,78 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"update\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2ISBhyfxnVaIs3PPSuzn0pmiNtu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4d00eeb6-c038-4e56-8eeb-afd45776f328\" name=\"Changes\" comment=\"\" />\r\n      <created>1670165227642</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670165227642</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"update\">\r\n      <created>1670167191161</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670167191161</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d54c3370aca1e44597eea378f6f3cbcf4def2a1c)
++++ b/.idea/workspace.xml	(date 1670167820226)
+@@ -2,6 +2,7 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="4d00eeb6-c038-4e56-8eeb-afd45776f328" name="Changes" comment="update">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -23,6 +24,20 @@
+   </component>
+   <component name="PropertiesComponent">
+     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
++  </component>
++  <component name="RunManager">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Main" />
++      <module name="L9-Ticketing_Final_ITC2205" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Main" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -40,7 +55,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1670167191161</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="update">
++      <created>1670167731811</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1670167731811</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.IOException;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void CLS() {\r\n        // CLEARING SCREEN COMMAND (START)\r\n        System.out.println(\"\\033[H\\033[2J\");\r\n        System.out.flush();\r\n        // CLEARING SCREEN COMMAND (END)\r\n    }\r\n    public static int readInteger()throws IOException  { // input validation\r\n        System.out.println(\"Choose your option\");\r\n        int option = 0;\r\n        Scanner input = new Scanner(System.in);\r\n        boolean error;\r\n        do {\r\n            try {\r\n                option = input.nextInt();\r\n                error = false;\r\n            } catch (Exception e) {\r\n                System.out.println(\"That was not an integer\");\r\n                input.next(); //Throw away the wrong input\r\n                error = true;\r\n            }\r\n        }\r\n        while (error);\r\n        return option;\r\n    }\r\n    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion\r\n        String nameToSearch;\r\n        while (true) {\r\n            System.out.println(\"---- What do you want to so today? -----\");\r\n            System.out.println(\"1. Login\");\r\n            System.out.println(\"2. Exit\");\r\n            int option = 0;\r\n            do {\r\n                option = readInteger();\r\n                switch (option) {\r\n                    case 1:\r\n                        CLS();\r\n                        System.out.println(\"1. Login\");\r\n                        //login();\r\n                        break;\r\n                    case 2:\r\n                        System.out.println(\"Goodbye\");\r\n                        System.exit(0);\r\n                    default:\r\n                        System.out.println(\"Please type 1 - 2\");\r\n                }\r\n            } while (option < 1 || option > 2);\r\n        }\r\n    }\r\n    public static void main(String[] args) {\r\n        showMenu();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision d54c3370aca1e44597eea378f6f3cbcf4def2a1c)
++++ b/src/Main.java	(date 1670167820244)
+@@ -51,6 +51,10 @@
+         }
+     }
+     public static void main(String[] args) {
+-        showMenu();
++        try {
++            showMenu();
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
+     }
+ }
+\ No newline at end of file

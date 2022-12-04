@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,33 +8,6 @@ public class Main {
         System.out.flush();
         // CLEARING SCREEN COMMAND (END)
     }
-    public void login() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Username: ");
-        String username = input.next();
-        System.out.println("Password: ");
-        String password = input.next();
-            boolean foundIt = false;
-            for (User u:Store.getUserList())
-            {
-                if (u.getUsername().equals(username))
-                {   // found the user that matches the username
-                    foundIt = true;
-                    if (u.authenticate(password)) {
-                        System.out.println("Username: "+username+" login successful");
-                        Store.setCurrentUser(u);
-                    }
-                    else
-                    {
-                        System.out.println("password does not match");
-                    }
-                }
-            }
-            if (!foundIt)
-            {
-                System.out.println("Username not found");
-            }
-        }
     public static int readInteger()throws IOException  { // input validation
         System.out.println("Choose your option");
         int option = 0;
@@ -67,6 +38,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
+                        System.out.println("1. Login");
                         //login();
                         break;
                     case 2:
