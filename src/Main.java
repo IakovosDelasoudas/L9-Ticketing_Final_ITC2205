@@ -66,7 +66,6 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
-                        System.out.println("1. Login");
                         //login();
                         break;
                     case 2:
@@ -90,7 +89,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
-                        //Submitticket();
+                        addticket();
                         break;
                     case 2:
                         CLS();
@@ -134,6 +133,16 @@ public class Main {
     }
     public static void addticket()throws IOException { // add the book to file and prints the things that the user types
         Ticket c1 = new Ticket();
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter Description :");
+        String desc = myObj.nextLine();
+        c1.setDesc(desc);
+        System.out.println("Enter TicketID :");
+        int TicketID = myObj.nextInt();
+        c1.setTicketID(String.valueOf(TicketID));
+        System.out.println("Enter TicketID :");
+        String username = myObj.nextLine();
+        c1.setUser(username);
         try
         {
             String filename= "Books.txt";
@@ -145,7 +154,6 @@ public class Main {
         {
             System.err.println("IOException: " + ioe.getMessage());
         }
-
     }
     public static void main(String[] args) throws IOException {
             showMenu();
