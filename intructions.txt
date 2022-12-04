@@ -29,12 +29,11 @@ META ANAOLOGOS TO ATOMO AN EINAI USER STO USER AN EINAI STAFF STO STAFF
 
 STAFF OPTIONS
 VIEW TICKETS
-
+The second option will be viewing tickets that the specific user has submitted.
 
 
 USER OPTIONS
 The first option will be to submit a ticket which then will ask the user what his problem is, so the ticket reaches the
 correct employee.
-The second option will be viewing tickets that the specific user has submitted.
 The third option will be a ticket search (user submitted).
 The last option will be exiting the software.

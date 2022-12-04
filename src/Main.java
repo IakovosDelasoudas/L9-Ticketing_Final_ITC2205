@@ -26,10 +26,8 @@ public class Main {
         while (error);
         return option;
     }
-    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion
-        String nameToSearch;
+    public static void showMenu()throws IOException {
         while (true) {
-            System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Login");
             System.out.println("2. Exit");
             int option = 0;
@@ -38,16 +36,15 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
-                        System.out.println("1. Login");
                         //login();
                         break;
                     case 2:
                         System.out.println("Goodbye");
                         System.exit(0);
                     default:
-                        System.out.println("Please type 1 - 2");
+                        System.out.println("Please type 1 - 3");
                 }
-            } while (option < 1 || option > 2);
+            } while (option < 1 || option > 3);
         }
     }
     public static void main(String[] args) throws IOException {
