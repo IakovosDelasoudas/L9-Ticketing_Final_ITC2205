@@ -67,7 +67,6 @@ public class Main {
         return option;
     }
     public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion
-        String nameToSearch;
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Login");
