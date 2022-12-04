@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
@@ -127,7 +129,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
-                        //Viewtickets();
+                        viewalltickets();
                         break;
                     case 2:
                         CLS();
@@ -208,6 +210,15 @@ public class Main {
                 .toString();
 
         return generatedString;
+    }
+
+    public static void viewalltickets() throws IOException{
+        try (BufferedReader br = new BufferedReader(new FileReader("Tickets.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
     }
     public static void main(String[] args) throws IOException {
             showMenu();
