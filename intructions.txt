@@ -1,10 +1,13 @@
 1.	Description of the topic, addressing the problem, the context, and the target market.
 
-We decided, after a session with our clients, that their company needed to have a way to receive feedback for their products. This led into proposing a ticketing system. The ticketing system will allow the company to receive direct input from the consumers, whether that is questions about the products or general feedback on the products. 
+We decided, after a session with our clients, that their company needed to have a way to receive feedback for their
+products. This led into proposing a ticketing system. The ticketing system will allow the company to receive direct input
+from the consumers, whether that is questions about the products or general feedback on the products.
 
 2.	Development language to be used (including justification)
 
-We will use Java, since we are both familiar with the language and we feel confident that the required function of the code will be much easier to develop. The software will include a menu that prompts the user with options.
+We will use Java, since we are both familiar with the language and we feel confident that the required function of the
+code will be much easier to develop. The software will include a menu that prompts the user with options.
 
 3.	Objectives of the software to be developed
 
@@ -13,7 +16,8 @@ We will use Java, since we are both familiar with the language and we feel confi
 2 EMPLOYEES PAEI SE SIMGKRIMENO CATEGORY 1 LEADER POU BELPEI PRAGMATA ISWS ME COUNTER?
 
 
-Na dei posa tickets exei analavei o employee kai an paei panw apo enan ari8mo na to stelnei ston allon h kati pou na leei pending h na to egrinei o owner
+Na dei posa tickets exei analavei o employee kai an paei panw apo enan ari8mo na to stelnei ston allon h kati pou na
+leei pending h na to egrinei o owner
 
 
 STAFF OPTIONS
@@ -21,7 +25,8 @@ STAFF OPTIONS
 
 
 USER OPTIONS
-The first option will be to submit a ticket which then will ask the user what his problem is, so the ticket reaches the correct employee.
+The first option will be to submit a ticket which then will ask the user what his problem is, so the ticket reaches the
+correct employee.
 The second option will be viewing tickets that the specific user has submitted.
 The third option will be a ticket search (user submitted).
 The last option will be exiting the software.
