@@ -1,44 +1,56 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-        public static void CLS() {
+    public static void CLS() {
         // CLEARING SCREEN COMMAND (START)
         System.out.println("\033[H\033[2J");
         System.out.flush();
         // CLEARING SCREEN COMMAND (END)
     }
-    public static void main(String[] args) {
+    public static int readInteger()throws IOException  { // input validation
+        System.out.println("Choose your option");
+        int option = 0;
         Scanner input = new Scanner(System.in);
-        int choice;
+        boolean error;
         do {
-            System.out.println(" ");
-            System.out.println("---------------------------------------------------------");
-            System.out.println("Welcome to LoL-Coaching. Are you a Player or a Coach?\n");
-            System.out.print("1.) Player\n");
-            System.out.print("2.) Coach\n");
-            System.out.print("3.) EXIT\n");
-            System.out.print("\nEnter Your Menu Choice: ");
-            choice = input.nextInt();
-
-            switch (choice) {
-                case 1 -> {
-                    CLS();
-
-                }
-                case 2 -> {
-                    CLS();
-
-                }
-                case 3 -> {
-                    CLS();
-
-                }
-                default -> {
-                    CLS();
-                    System.err.print(choice + " is not a valid option! Please try again!");
-                }
+            try {
+                option = input.nextInt();
+                error = false;
+            } catch (Exception e) {
+                System.out.println("That was not an integer");
+                input.next(); //Throw away the wrong input
+                error = true;
             }
-        } while (true);
+        }
+        while (error);
+        return option;
     }
-
+    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion
+        String nameToSearch;
+        while (true) {
+            System.out.println("---- What do you want to so today? -----");
+            System.out.println("1. Login");
+            System.out.println("2. Exit");
+            int option = 0;
+            do {
+                option = readInteger();
+                switch (option) {
+                    case 1:
+                        CLS();
+                        System.out.println("1. Login");
+                        //login();
+                        break;
+                    case 2:
+                        System.out.println("Goodbye");
+                        System.exit(0);
+                    default:
+                        System.out.println("Please type 1 - 2");
+                }
+            } while (option < 1 || option > 2);
+        }
+    }
+    public static void main(String[] args) {
+        showMenu();
+    }
 }
