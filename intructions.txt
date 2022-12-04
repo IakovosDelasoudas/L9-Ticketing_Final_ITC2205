@@ -8,6 +8,19 @@ We will use Java, since we are both familiar with the language and we feel confi
 
 3.	Objectives of the software to be developed
 
+
+
+2 EMPLOYEES PAEI SE SIMGKRIMENO CATEGORY 1 LEADER POU BELPEI PRAGMATA ISWS ME COUNTER?
+
+
+Na dei posa tickets exei analavei o employee kai an paei panw apo enan ari8mo na to stelnei ston allon h kati pou na leei pending h na to egrinei o owner
+
+
+STAFF OPTIONS
+
+
+
+USER OPTIONS
 The first option will be to submit a ticket which then will ask the user what his problem is, so the ticket reaches the correct employee.
 The second option will be viewing tickets that the specific user has submitted.
 The third option will be a ticket search (user submitted).
