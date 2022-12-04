@@ -4,7 +4,6 @@ public class Store {
     private final ArrayList<User> userList;
     private User currentUser;
 
-
     public Store()
     {
         userList = new ArrayList<>();

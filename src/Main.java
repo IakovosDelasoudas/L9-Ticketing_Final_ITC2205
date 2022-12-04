@@ -50,7 +50,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         showMenu();
     }
 }
