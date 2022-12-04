@@ -1,5 +1,10 @@
-import java.io.IOException;
 import java.util.Scanner;
+import java.util.Vector;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.File;
+import java.io.BufferedWriter;
 
 public class Main {
     public static void CLS() {
@@ -101,7 +106,21 @@ public class Main {
             } while (option < 1 || option > 3);
         }
     }
+    public static void addticket()throws IOException { // add the book to file and prints the things that the user types
+        Ticket c1 = new Ticket();
+        try
+        {
+            String filename= "Books.txt";
+            FileWriter fw = new FileWriter(filename,true); //the true will append the new data
+            fw.write(c1+ "\n");//appends the string to the file
+            fw.close();
+        }
+        catch(IOException ioe)
+        {
+            System.err.println("IOException: " + ioe.getMessage());
+        }
 
+    }
     public static void main(String[] args) throws IOException {
             showMenu();
     }
