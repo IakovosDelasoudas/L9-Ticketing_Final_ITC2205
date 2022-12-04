@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Store {
-    private final ArrayList<User> userList;
+    private static ArrayList<User> userList;
     private User currentUser;
 
     public Store()
@@ -13,7 +13,7 @@ public class Store {
         userList.add(new User("Owner", "Owner123", User.Type.Owner));
     }
 
-    public ArrayList<User> getUserList() {
+    public static ArrayList<User> getUserList() {
         return userList;
     }
 

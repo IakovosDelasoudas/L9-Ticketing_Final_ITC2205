@@ -21,6 +21,9 @@ public class User {
     {
         return username;
     }
+    public Type getType() {
+        return type;
+    }
 
     /**
      * Checks a given string if it matches the password of the user
