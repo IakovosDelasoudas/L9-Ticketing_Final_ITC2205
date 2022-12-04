@@ -20,7 +20,15 @@ Na dei posa tickets exei analavei o employee kai an paei panw apo enan ari8mo na
 leei pending h na to egrinei o owner
 
 
+
+
+AXRIKO MENU 2 OPTIONS
+LOGIN
+EXIT
+META ANAOLOGOS TO ATOMO AN EINAI USER STO USER AN EINAI STAFF STO STAFF
+
 STAFF OPTIONS
+VIEW TICKETS
 
 
 
