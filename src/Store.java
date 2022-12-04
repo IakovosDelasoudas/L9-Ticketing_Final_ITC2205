@@ -10,7 +10,6 @@ public class Store {
         userList.add(new User("User", "User123", User.Type.User));
         userList.add(new User("Staff1", "Staff123", User.Type.Staff1));
         userList.add(new User("Staff2", "Staff321", User.Type.Staff2));
-        userList.add(new User("Owner", "Owner123", User.Type.Owner));
     }
 
     public ArrayList<User> getUserList() {

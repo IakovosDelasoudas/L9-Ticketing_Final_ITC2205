@@ -2,7 +2,7 @@ public class User {
     private String username;
     private String password;
     public enum Type {
-        User, Staff1, Staff2, Owner
+        User, Staff1, Staff2,
     }
     private Type type;
 
