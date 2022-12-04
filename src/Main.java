@@ -93,8 +93,7 @@ public class Main {
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Submit ticket");
-            System.out.println("2. Search ticket");
-            System.out.println("3. Exit");
+            System.out.println("2. Exit");
             int option = 0;
             do {
                 option = readInteger();
@@ -104,17 +103,13 @@ public class Main {
                         addticket();
                         break;
                     case 2:
-                        CLS();
-                        //search();
-                        break;
-                    case 3:
 
                         System.out.println("Goodbye");
                         System.exit(0);
                     default:
-                        System.out.println("Please type 1 - 3");
+                        System.out.println("Please type 1 - 2");
                 }
-            } while (option < 1 || option > 3);
+            } while (option < 1 || option > 2);
         }
     }
     public static void showstaffmenu()throws IOException {
