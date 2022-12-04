@@ -33,4 +33,13 @@ public class Ticket {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "TicketID='" + TicketID + '\'' +
+                ", user='" + user + '\'' +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
 }

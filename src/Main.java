@@ -66,6 +66,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         CLS();
+                        addticket();
                         //login();
                         break;
                     case 2:
@@ -140,12 +141,13 @@ public class Main {
         System.out.println("Enter TicketID :");
         int TicketID = myObj.nextInt();
         c1.setTicketID(String.valueOf(TicketID));
-        System.out.println("Enter TicketID :");
+        System.out.println("Enter Username :");
+        String username1 = myObj.nextLine();
         String username = myObj.nextLine();
         c1.setUser(username);
         try
         {
-            String filename= "Books.txt";
+            String filename= "Tickets.txt";
             FileWriter fw = new FileWriter(filename,true); //the true will append the new data
             fw.write(c1+ "\n");//appends the string to the file
             fw.close();
