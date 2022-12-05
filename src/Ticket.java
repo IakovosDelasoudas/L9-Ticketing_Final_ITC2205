@@ -3,9 +3,6 @@ public class Ticket {
     private String user;
     private String desc;
 
-    public void display() {
-    }
-
     public enum Type{
         Type1, Type2
     }
