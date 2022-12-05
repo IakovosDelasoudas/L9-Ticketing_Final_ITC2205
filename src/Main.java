@@ -70,7 +70,7 @@ public class Main {
         while (error);
         return option;
     }
-    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation fucntion
+    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation function
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Login");
@@ -92,7 +92,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void showusermenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation fucntion
+    public static void showusermenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation function
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Submit ticket");
@@ -115,7 +115,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void showstaffmenu1()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
+    public static void showstaffmenu1()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation function
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. View submitted tickets");
@@ -142,7 +142,7 @@ public class Main {
             } while (option < 1 || option > 3);
         }
     }
-    public static void showstaffmenu2()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
+    public static void showstaffmenu2()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation function
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. View submitted tickets");
@@ -247,7 +247,7 @@ public class Main {
     }
     public static void search1() throws IOException {
 
-        String[] words=null;  //Intialize the word Array
+        String[] words=null;  //Initialize the word Array
         FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
         BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
         String s;
@@ -265,7 +265,7 @@ public class Main {
     }
     public static void search2() throws IOException {
 
-        String[] words=null;  //Intialize the word Array
+        String[] words=null;  //Initialize the word Array
         FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
         BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
         String s;
