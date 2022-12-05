@@ -11,7 +11,7 @@ public class Main {
         System.out.flush();
         // CLEARING SCREEN COMMAND (END)
     }
-    public static void login() throws IOException {
+    public static void login() throws IOException { //login function
         Store store = new Store();
         Scanner input = new Scanner(System.in);
         System.out.println("Username: ");
@@ -65,7 +65,7 @@ public class Main {
         while (error);
         return option;
     }
-    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 5 thought the validation fucntion
+    public static void showMenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation fucntion
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Login");
@@ -87,7 +87,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void showusermenu()throws IOException {
+    public static void showusermenu()throws IOException { // shows the menu and get user input from 1 to 2 thought the validation fucntion
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. Submit ticket");
@@ -110,7 +110,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void showstaffmenu()throws IOException {
+    public static void showstaffmenu()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. View submitted tickets");
@@ -138,7 +138,7 @@ public class Main {
             } while (option < 1 || option > 3);
         }
     }
-    public static void addticket()throws IOException { // add the book to file and prints the things that the user types
+    public static void addticket()throws IOException { // add the ticket to file and prints the things that the user types
         Ticket c1 = new Ticket();
         Scanner myObj = new Scanner(System.in);
         while (true) {
@@ -175,7 +175,7 @@ public class Main {
         }
     }
 
-    private static void AppendToFile(Ticket c1, String ticketID) {
+    private static void AppendToFile(Ticket c1, String ticketID) { //appends data in a file
         try
         {
             String filename= "Tickets.txt";
@@ -191,7 +191,7 @@ public class Main {
         }
     }
 
-    public static String RandomString() {
+    public static String RandomString() { // generates a random string to be used as a ticket id
         int leftLimit = 48; // numeral '0'
         int rightLimit = 122; // letter 'z'
         int targetStringLength = 10;
@@ -206,7 +206,7 @@ public class Main {
         return generatedString;
     }
 
-    public static void viewalltickets() throws IOException{
+    public static void viewalltickets() throws IOException{ // displays all contents of tickets.txt
         try (BufferedReader br = new BufferedReader(new FileReader("Tickets.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
