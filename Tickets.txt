@@ -1,2 +1,1 @@
-Ticket{TicketID='rPd7cR4noW', user='User', desc='IS L9 TICKET CAPPABLE OF BOOSTING ME TO DIAMOND BEFORE THE END OF THE SEASON ?? IM A HARDSTUCK XD', type=Type1}
-rEtj9z6e41,User,I AM NOT YET DIAMOND I AM STILL GOLD XD,Type2
+Tmb2qwLyaw*User*Keyboard broken*Type2

@@ -2,6 +2,10 @@ public class Ticket {
     private String TicketID;
     private String user;
     private String desc;
+
+    public void display() {
+    }
+
     public enum Type{
         Type1, Type2
     }
@@ -10,8 +14,8 @@ public class Ticket {
     // CONSTRUCTORS
     public Ticket() {
         this.TicketID = TicketID;
-        this.user = user;
-        this.desc = desc;
+        this.user = this.user;
+        this.desc = this.desc;
     }
     public Ticket(String ticketID, String user, String desc, Type type) {
         this.user = user;

@@ -1,7 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -127,6 +126,7 @@ public class Main {
                         break;
                     case 2:
                         CLS();
+                        viewalltickets();
                         //search();
                         break;
                     case 3:
@@ -214,6 +214,22 @@ public class Main {
             }
         }
     }
+    /*public static void search() {
+        //Creating an array to store objects of type Std
+        Ticket[] st = new Ticket[4];
+        Scanner myObj = new Scanner(System.in);
+        //Populating the array
+        String TicketID = RandomString();
+        String user = "User";
+        System.out.println("Enter Description :");
+        String desc = myObj.nextLine();
+        st[0] = new Ticket(TicketID,user, desc, Ticket.Type.Type1);
+        //Invoking display method on each object in the array
+        for(int i = 0; i<st.length; i++) {
+            st[i].display();
+            System.out.println(" ");
+        }
+    }*/
     public static void main(String[] args) throws IOException {
             showMenu();
     }
