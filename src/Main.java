@@ -1,6 +1,8 @@
 import java.io.*;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,8 +32,11 @@ public class Main {
                     if (username.equals("User")){
                         showusermenu();
                     }
-                    else if (username.equals("Staff1") || username.equals("Staff2")) {
-                        showstaffmenu();
+                    else if (username.equals("Staff1")) {
+                        showstaffmenu1();
+                    }
+                    else if (username.equals("Staff2")) {
+                        showstaffmenu2();
                     }
                 }
                 else
@@ -110,7 +115,7 @@ public class Main {
             } while (option < 1 || option > 2);
         }
     }
-    public static void showstaffmenu()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
+    public static void showstaffmenu1()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
         while (true) {
             System.out.println("---- What do you want to so today? -----");
             System.out.println("1. View submitted tickets");
@@ -126,8 +131,34 @@ public class Main {
                         break;
                     case 2:
                         CLS();
+                        search1();
+                        break;
+                    case 3:
+                        System.out.println("Goodbye");
+                        System.exit(0);
+                    default:
+                        System.out.println("Please type 1 - 3");
+                }
+            } while (option < 1 || option > 3);
+        }
+    }
+    public static void showstaffmenu2()throws IOException { // shows the menu and get user input from 1 to 3 thought the validation fucntion
+        while (true) {
+            System.out.println("---- What do you want to so today? -----");
+            System.out.println("1. View submitted tickets");
+            System.out.println("2. Search tickets either by submitted by specific user or by ticket number");
+            System.out.println("3. Exit");
+            int option = 0;
+            do {
+                option = readInteger();
+                switch (option) {
+                    case 1:
+                        CLS();
                         viewalltickets();
-                        //search();
+                        break;
+                    case 2:
+                        CLS();
+                        search2();
                         break;
                     case 3:
                         System.out.println("Goodbye");
@@ -214,22 +245,44 @@ public class Main {
             }
         }
     }
-    /*public static void search() {
-        //Creating an array to store objects of type Std
-        Ticket[] st = new Ticket[4];
-        Scanner myObj = new Scanner(System.in);
-        //Populating the array
-        String TicketID = RandomString();
-        String user = "User";
-        System.out.println("Enter Description :");
-        String desc = myObj.nextLine();
-        st[0] = new Ticket(TicketID,user, desc, Ticket.Type.Type1);
-        //Invoking display method on each object in the array
-        for(int i = 0; i<st.length; i++) {
-            st[i].display();
-            System.out.println(" ");
+    public static void search1() throws IOException {
+
+        String[] words=null;  //Intialize the word Array
+        FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
+        BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
+        String s;
+        int count=0;   //Intialize the word to zero
+        while((s=br.readLine())!=null)   //Reading Content from the file
+        {
+            words=s.split(",");  //Split the word using comma
+            for (String word : words)
+            {
+                if (word.equals("Type1"))   //Search for the given word
+                {
+                    System.out.println(s);
+                }
+            }
         }
-    }*/
+    }
+    public static void search2() throws IOException {
+
+        String[] words=null;  //Intialize the word Array
+        FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
+        BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
+        String s;
+        int count=0;   //Intialize the word to zero
+        while((s=br.readLine())!=null)   //Reading Content from the file
+        {
+            words=s.split(",");  //Split the word using comma
+            for (String word : words)
+            {
+                if (word.equals("Type2"))   //Search for the given word
+                {
+                    System.out.println(s);
+                }
+            }
+        }
+    }
     public static void main(String[] args) throws IOException {
             showMenu();
     }

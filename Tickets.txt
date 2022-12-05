@@ -1,2 +1,2 @@
-Tmb2qwLyaw*User*Keyboard broken*Type2
-PRueiZ2Fhr*User*I havent received my product its been 3 weeks*Type1
+Tmb2qwLyaw,User,Keyboard broken,Type2
+PRueiZ2Fhr,User,I havent received my product its been 3 weeks,Type1
