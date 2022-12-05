@@ -251,7 +251,6 @@ public class Main {
         FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
         BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
         String s;
-        int count=0;   //Intialize the word to zero
         while((s=br.readLine())!=null)   //Reading Content from the file
         {
             words=s.split(",");  //Split the word using comma
@@ -270,7 +269,6 @@ public class Main {
         FileReader fr = new FileReader("Tickets.txt");  //Creation of File Reader object
         BufferedReader br = new BufferedReader(fr); //Creation of BufferedReader object
         String s;
-        int count=0;   //Intialize the word to zero
         while((s=br.readLine())!=null)   //Reading Content from the file
         {
             words=s.split(",");  //Split the word using comma
